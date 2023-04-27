@@ -1,0 +1,9 @@
+/node_modules
+/.png
+.png.js
+
+/dist
+
+.env.development
+# Local Netlify folder
+.netlify
