@@ -7,7 +7,7 @@ import React from 'react';
 const App = () => {
   return (
     <div>
-      <h1>hola mundo</h1>
+      <h1>Proyecto Todo app con react - redux</h1>
     </div>
   );
 };
