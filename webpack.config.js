@@ -61,15 +61,6 @@ module.exports = {
                     { loader: 'sass-loader' },
                 ],
             },
-            // Reglas para los archivos de imágenes
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                  {
-                    loader: 'file-loader',
-                  },
-                ],
-            },
         ],
     },
     plugins: [

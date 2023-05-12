@@ -39,7 +39,8 @@
         "arrow-body-style": 0,
         "react/no-array-index-key": 0,
         "semi": 0,
-        "comma-dangle": 0
+        "comma-dangle": 0,
+        "camelcase": 0
     }
 }
 

@@ -1,0 +1,108 @@
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --dark-theme: #25273D;
+    --dark-grey: #171823;
+    --grey: #393A4B;
+    --stroke: #979797;
+    --color-text: #C8CBE7; // C8CBE7 | 494C6B
+    --light-theme: #E3E4F1;
+    --white: #FFF;
+}
+
+$text-color: #494C6B;
+
+body, body .light {
+    $text-color: #494C6B !global;
+    background-color: var(--white);
+    color: $text-color;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 40px;
+    letter-spacing: 15px;
+}
+
+body, #root, .dark, .light {
+    height: 100vh;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    .light {
+        background-color: var(--light-theme);
+    }
+    .dark {
+        $text-color: #767992 !global;
+        background-color: var(--dark-theme);
+        color: $text-color;
+        header {
+            &::before {
+                background-image: url('../../assets/images/bkg-dark.jpg')
+            }
+            nav {
+                .theme-switch {
+                    background-image: url("../../assets/images//sun.svg");
+                }
+             }
+        }
+        .content {
+            .todo-container {
+                box-shadow: 0px 8px 21px 0px rgba(20,20,20,1);
+                background-color: var(--dark-theme);
+            }
+        }
+        input {
+            color: $text-color;
+        }
+    }
+    .content {
+        width: 95%;
+        position: relative;
+        top: -10%;
+        z-index: 2;
+        .todo-container {
+            margin-top: 3%;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0px 8px 21px -2px rgba(66,62,62,0.56);
+            .filters {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                align-items: center;
+                
+                .active {
+                    padding: 12px 0 0;
+                    font-weight: normal;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+    @media (min-width:680px) {
+        .content {
+            width: 50%;
+            max-width: 600px;
+            top: -15%;
+        }
+    }
+}
+
+#main {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+@import "_header"
