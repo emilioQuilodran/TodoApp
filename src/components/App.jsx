@@ -3,8 +3,8 @@
 import React, { useContext } from 'react';
 import TodosContainer from './containers/TodoContainer';
 import TodoFormContainer from './containers/TodoFormContainer';
-import { FilterOptions } from './pure/FilterOptions'
 import { ThemeContext } from '../context/themeContext';
+import FooterContainer from './containers/FooterContainer';
 
 /**
  * @returns {React.Component} Componente Principal de la aplicacion
@@ -24,7 +24,7 @@ const App = () => {
         <TodoFormContainer />
         <div className="todo-container">
           <TodosContainer />
-          <FilterOptions />
+          <FooterContainer />
         </div>
       </div>
     </div>

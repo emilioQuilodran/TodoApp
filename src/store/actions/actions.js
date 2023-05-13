@@ -3,6 +3,9 @@ let nextToId = 0;
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+export const DELETE_TODO = 'DELETE_TODO';
+export const CLEAR_COMPLETED_TASKS = 'CLEAR_COMPLETED_TASKS';
+
 /**
  *
  * @param {string} text
@@ -39,5 +42,20 @@ export const setVisibilityFilter = (filter) => {
         payload: {
             filter
         }
+    }
+}
+
+export const deleteTodo = (id) => {
+    return {
+        type: DELETE_TODO,
+        payload: {
+            id
+        }
+    }
+}
+
+export const clearCompletedTasks = () => {
+    return {
+        type: CLEAR_COMPLETED_TASKS
     }
 }

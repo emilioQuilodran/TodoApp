@@ -1,4 +1,6 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actions/actions'
+import {
+ ADD_TODO, TOGGLE_TODO, CLEAR_COMPLETED_TASKS, DELETE_TODO
+} from '../actions/actions'
 
 const initialState = [];
 
@@ -20,7 +22,10 @@ const todosReducer = (state = initialState, action) => {
                     completed: !todo.completed
 
                 } : todo))
-
+        case CLEAR_COMPLETED_TASKS:
+            return state.filter((todo) => todo.completed === false)
+        case DELETE_TODO:
+            return state.filter((todo) => todo.id !== action.payload.id)
         default:
             return state;
     }

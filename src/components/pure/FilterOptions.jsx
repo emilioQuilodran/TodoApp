@@ -1,3 +1,4 @@
+/* eslint-disable template-curly-spacing */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -6,18 +7,17 @@ import React from 'react'
 import ButtonGroup from '@mui/material/ButtonGroup'
 import FilterContainer from '../containers/FilterContainer'
 
-// eslint-disable-next-line import/prefer-default-export
-
-const clearTask = () => {
+export const FilterOptions = (props) => {
   // eslint-disable-next-line no-console
-  console.log('clearing task')
-}
-
-export const FilterOptions = () => {
+  console.log(props)
+  const { todosCount, actions } = props
+  const itemWord = todosCount === 1 ? 'item' : 'items'
   return (
     <div className="filters">
       <span>
-        5 items left
+        {`${todosCount } ` || 'NO'}
+        { `${itemWord } ` }
+        left
       </span>
       <ButtonGroup variant="text" aria-label="text button group">
         <FilterContainer filter="SHOW_ALL">
@@ -30,7 +30,7 @@ export const FilterOptions = () => {
           ACTIVE
         </FilterContainer>
       </ButtonGroup>
-      <span onClick={clearTask}>
+      <span onClick={actions.clearCompletedTasks}>
         Clear Completed
       </span>
     </div>

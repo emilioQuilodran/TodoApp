@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import Filter from '../pure/Filter'
-import { setVisibilityFilter } from '../../store/actions/actions'
+import * as TodoActions from '../../store/actions/actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -10,8 +11,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+        actions: bindActionCreators(TodoActions, dispatch),
         onClick: () => {
-            dispatch(setVisibilityFilter(ownProps.filter))
+            dispatch(TodoActions.setVisibilityFilter(ownProps.filter))
         }
     }
 }

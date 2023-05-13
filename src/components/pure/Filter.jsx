@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 import Button from '@mui/material/Button'
