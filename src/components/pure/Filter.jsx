@@ -6,7 +6,14 @@ import PropTypes from 'prop-types'
 
 const Filter = ({ active, onClick, children }) => {
   if (active) {
-    return (<span className="active">{children}</span>)
+    return (
+      <Button
+        className="filter"
+        disabled
+      >
+        {children}
+      </Button>
+    )
   }
     return (
       // eslint-disable-next-line react/button-has-type

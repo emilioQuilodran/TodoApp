@@ -44,16 +44,6 @@ body {
         $text-color: #767992 !global;
         background-color: var(--dark-theme);
         color: $text-color;
-        header {
-            &::before {
-                background-image: url('../../assets/images/bkg-dark.jpg')
-            }
-            nav {
-                .theme-switch {
-                    background-image: url("../../assets/images//sun.svg");
-                }
-             }
-        }
         .content {
             .todo-container {
                 box-shadow: 0px 8px 21px 0px rgba(20,20,20,1);
@@ -86,7 +76,7 @@ body {
                     font-size: 14px;
                 }
             }
-        }
+        }        
     }
     
     @media (min-width:680px) {

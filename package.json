@@ -41,6 +41,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
+    "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^2.7.5",
     "netlify-cli": "^6.15.0",
     "node-sass": "^8.0.0",

@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './containers/todo'
 
-const TodoList = ({ todos, onTodoClick }) => {
+const TodoList = ({ todos, onTodoClick, onDelete }) => {
   return (
     <div>
       <ul>
@@ -15,13 +15,20 @@ const TodoList = ({ todos, onTodoClick }) => {
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...todo} // id , text ,completed
                 onClick={() => onTodoClick(todo.id)}
+                deleteItem={() => onDelete(todo.id)}
               />
             ))
           )
         }
         {
           todos.length === 0 && (
-            <p>No tienes ninguna tarea ...</p>
+            <p
+              style={
+                { textAlign: 'center', padding: '20px' }
+              }
+            >
+              You dont have tasks...
+            </p>
           )
         }
       </ul>
@@ -39,7 +46,8 @@ TodoList.propTypes = {
             }
         ).isRequired
     ).isRequired,
-    onTodoClick: PropTypes.func.isRequired
+    onTodoClick: PropTypes.func.isRequired,
+    onDelete: PropTypes.func.isRequired
 }
 
 export default TodoList

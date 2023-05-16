@@ -5,6 +5,23 @@ import TodosContainer from './containers/TodoContainer';
 import TodoFormContainer from './containers/TodoFormContainer';
 import { ThemeContext } from '../context/themeContext';
 import FooterContainer from './containers/FooterContainer';
+import bkgDark from '../assets/images/bkg-dark.jpg'
+import bkgLight from '../assets/images/bkg-light.jpg'
+import moon from '../assets/images/moon.svg'
+import sun from '../assets/images/sun.svg'
+
+const darkThemeBkg = {
+  backgroundImage: `url(${bkgDark})`
+}
+const lightThemeBkg = {
+  backgroundImage: `url(${bkgLight})`
+}
+const iconMoon = {
+  backgroundImage: `url(${moon})`
+}
+const iconSun = {
+  backgroundImage: `url(${sun})`
+}
 
 /**
  * @returns {React.Component} Componente Principal de la aplicacion
@@ -14,10 +31,16 @@ const App = () => {
   const { toggle, toggleFunction } = useContext(ThemeContext)
   return (
     <div id="main" className={toggle ? 'dark' : 'light'}>
-      <header>
+      <header
+        style={toggle ? darkThemeBkg : lightThemeBkg}
+      >
         <nav>
           <h1>TODO</h1>
-          <span className="theme-switch" onClick={toggleFunction} />
+          <span
+            style={toggle ? iconSun : iconMoon}
+            className="theme-switch"
+            onClick={toggleFunction}
+          />
         </nav>
       </header>
       <div className="content">

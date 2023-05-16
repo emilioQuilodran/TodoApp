@@ -8,8 +8,6 @@ import ButtonGroup from '@mui/material/ButtonGroup'
 import FilterContainer from '../containers/FilterContainer'
 
 export const FilterOptions = (props) => {
-  // eslint-disable-next-line no-console
-  console.log(props)
   const { todosCount, actions } = props
   const itemWord = todosCount === 1 ? 'item' : 'items'
   return (
